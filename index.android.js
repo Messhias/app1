@@ -9,23 +9,26 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
 export default class app1 extends Component {
   render() {
+
+    const randomNumer = () => {
+      alert(Math.floor(Math.random() * 10));
+    }
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Vamos ver se funciona agora essa merda
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <Button
+          title="Gerar número randomico"
+          onPress={randomNumer}
+          />
       </View>
     );
   }
@@ -48,6 +51,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  Button: {
+    backgroundColor: "blue"
+  }
 });
 
 AppRegistry.registerComponent('app1', () => app1);
